@@ -2,9 +2,9 @@ from ai_travel_model import query_huggingface
 from datetime import timedelta
 
 def generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences, start_date):
-    """Generate a structured travel itinerary using Hugging Face API with a start date."""
+    """Generate a structured travel itinerary using Hugging Face API with AI-generated day titles."""
     
-    # Format the itinerary date-wise
+    # Generate date-wise headers
     itinerary_dates = "\n".join(
         [f"- **Day {i+1} ({(start_date + timedelta(days=i)).strftime('%d %b %Y')})**"
          for i in range(trip_duration)]
@@ -18,13 +18,16 @@ def generate_itinerary(budget, trip_duration, destination, start_location, purpo
         f"\n- **Purpose:** {purpose}"
         f"\n- **Preferences:** {preferences}"
         f"\n\n### Itinerary Requirements:"
-        f"\n- Day-wise schedule with morning, afternoon, and evening activities"
+        f"\n- Assign a unique and engaging **theme/title** for each day, reflecting the key activities planned."
+        f"\n- The day titles should make the itinerary feel structured and exciting."
+        f"\n- Here are the days with their respective dates (Generate unique titles for them):"
         f"\n{itinerary_dates}"
-        f"\n- Budget-friendly hotels"
-        f"\n- Transportation options"
-        f"\n- Local food recommendations"
-        f"\n- Available tour guides or passes"
-        f"\n- Ensure all expenses fit within the budget"
+        f"\n- Day-wise schedule with morning, afternoon, and evening activities."
+        f"\n- Budget-friendly hotels."
+        f"\n- Transportation options."
+        f"\n- Local food recommendations."
+        f"\n- Available tour guides or passes."
+        f"\n- Ensure all expenses fit within the budget."
     )
 
     response = query_huggingface(prompt)
