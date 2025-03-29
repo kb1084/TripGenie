@@ -16,7 +16,7 @@ if st.button("🛫 Generate Itinerary"):
     itinerary = generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences)
     
     # Apply a stylish border around the output
-    st.subheader("📜 Your AI-Generated Itinerary")
+    st.subheader("📜 Generated Itinerary")
     st.markdown(
         f"""
         <div style="
