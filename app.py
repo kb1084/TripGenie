@@ -1,4 +1,5 @@
 import streamlit as st
+from datetime import date
 from itinerary import generate_itinerary
 
 st.title("🌍 TripGinie – Your AI Travel Genie!")
@@ -11,9 +12,12 @@ start_location = st.text_input("🚀 Enter your starting location", "New York")
 purpose = st.selectbox("🎯 Trip Purpose", ["Leisure", "Business", "Adventure", "Cultural"])
 preferences = st.text_area("✨ Enter your preferences (e.g., food, sightseeing, adventure)", "Sightseeing, local food")
 
+# Date Selection Feature
+start_date = st.date_input("📆 Select your start date", date.today())
+
 # Generate Itinerary Button
 if st.button("🛫 Generate Itinerary"):
-    itinerary = generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences)
+    itinerary = generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences, start_date)
     
     # Styled Output with Border
     st.subheader("📜 Here's an Itinerary Curated just for you!")
@@ -37,7 +41,7 @@ if st.button("🛫 Generate Itinerary"):
 
 # Footer
 st.markdown("---")  # Adds a separator line
-st.markdown("""
+st.markdown(f"""
 <p style="text-align:center; font-size:16px;">
     Created with ❤️ by <b>Kaustubh Bhalerao</b>  
 </p>
