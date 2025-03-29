@@ -1,15 +1,10 @@
-from datetime import datetime, timedelta
-
-def generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences, start_date):
-    """Generate a structured travel itinerary with dynamic dates."""
+def generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences):
+    """Generate a structured travel itinerary."""
     itinerary = ""
 
     for i in range(trip_duration):
-        current_date = start_date + timedelta(days=i)
-        formatted_date = current_date.strftime("%d %b %Y")  # Example: 29 Mar 2025
-
         itinerary += (
-            f"\n📅 **Day {i+1}: {formatted_date}**\n"
+            f"\n📅 **Day {i+1}**\n"
             f"🎯 **Destination:** {destination}\n"
             f"💰 **Budget:** {budget} INR\n"
             f"🛫 **Starting From:** {start_location}\n"
