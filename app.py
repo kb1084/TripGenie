@@ -14,8 +14,22 @@ preferences = st.text_area("Enter your preferences (e.g., food, sightseeing, adv
 # Generate Itinerary Button
 if st.button("Generate Itinerary"):
     itinerary = generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences)
+    
+    # Apply a border around the output
     st.subheader("Generated Itinerary")
-    st.write(itinerary)
+    st.markdown(
+        f"""
+        <div style="
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        ">
+            {itinerary}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 # Footer
 st.markdown("---")  # Adds a separator line
