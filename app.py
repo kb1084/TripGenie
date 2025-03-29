@@ -20,17 +20,15 @@ if st.button("Generate Itinerary"):
     st.markdown(
         f"""
         <div style="
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    color: black;
-    font-family: Arial, sans-serif;
-    white-space: pre-wrap; /* Preserves formatting */
-">
-    <pre style="margin: 0; font-size: 14px; line-height: 1.4; padding: 5px;">{itinerary}</pre>
-</div>
-
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            color: black;
+            font-family: Arial, sans-serif;
+        ">
+            <pre style="white-space: pre-wrap; font-size: 16px;">{itinerary}</pre>
+        </div>
         """,
         unsafe_allow_html=True
     )
