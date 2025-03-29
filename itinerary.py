@@ -1,3 +1,4 @@
+from ai_travel_model import query_huggingface
 def generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences):
     print("✅ Function Called: generate_itinerary")
     print(f"📅 Duration: {trip_duration} days | 💰 Budget: {budget} | 📍 Destination: {destination}")
