@@ -5,7 +5,7 @@ def generate_itinerary(budget, trip_duration, destination, start_location, purpo
     prompt = (
         f"Create a structured {trip_duration}-day travel itinerary from {start_location} to {destination}."
         f"\n\n### Trip Details:"
-        f"\n- **Budget:** {budget} USD (strict, no deviations)"
+        f"\n- **Budget:** {budget} INR (strict, no deviations)"
         f"\n- **Purpose:** {purpose}"
         f"\n- **Preferences:** {preferences}"
         f"\n\n### Itinerary Requirements:"
