@@ -24,9 +24,11 @@ if st.button("Generate Itinerary"):
             border-radius: 10px;
             padding: 15px;
             background-color: #f9f9f9;
-            color: black; /* Ensures text is black */
+            color: black;
+            font-family: Arial, sans-serif;
+            white-space: pre-wrap; /* Preserves formatting */
         ">
-            {itinerary}
+            <pre style="margin: 0; font-size: 16px;">{itinerary}</pre>
         </div>
         """,
         unsafe_allow_html=True
