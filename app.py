@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import date
 from itinerary import generate_itinerary
 
-st.title("🌍 TripGinie – Your AI Travel Genie!")
+st.title("🌍 TripGenie – Your AI Travel Genie!")
 
 # Input Fields
 budget = st.text_input("💰 Enter your budget (₹)", "1000")  # Added ₹ symbol
