@@ -6,7 +6,7 @@ def generate_itinerary(budget, trip_duration, destination, start_location, purpo
 
     for i in range(trip_duration):
         current_date = start_date + timedelta(days=i)
-        formatted_date = current_date.strftime("%d %b %Y")  
+        formatted_date = current_date.strftime("%d %b %Y")  # Example: 29 Mar 2025
 
         itinerary += (
             f"\n📅 **Day {i+1}: {formatted_date}**\n"
@@ -15,12 +15,12 @@ def generate_itinerary(budget, trip_duration, destination, start_location, purpo
             f"🛫 **Starting From:** {start_location}\n"
             f"🎭 **Purpose:** {purpose}\n"
             f"🌟 **Preferences:** {preferences}\n\n"
-            f"🌅 Morning: Explore a local attraction.\n"
-            f"🍽️ Afternoon: Try a budget-friendly local restaurant.\n"
-            f"🌆 Evening: Enjoy a cultural experience or nightlife.\n"
-            f"🏨 Stay: Book a budget hotel.\n"
-            f"🚖 Transport: Use local transport options.\n"
-            f"📍 Suggested Activities: Visit famous landmarks and try local food.\n"
+            f"🌅 **Morning:** Explore a local attraction.\n"
+            f"🍽️ **Afternoon:** Try a budget-friendly local restaurant.\n"
+            f"🌆 **Evening:** Enjoy a cultural experience or nightlife.\n"
+            f"🏨 **Stay:** Book a budget hotel.\n"
+            f"🚖 **Transport:** Use local transport options.\n"
+            f"📍 **Suggested Activities:** Visit famous landmarks and try local food.\n"
             "────────────────────────────\n"
         )
     
