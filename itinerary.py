@@ -1,22 +1,22 @@
 from ai_travel_model import query_huggingface
+
 def generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences):
-    print("✅ Function Called: generate_itinerary")
-    print(f"📅 Duration: {trip_duration} days | 💰 Budget: {budget} | 📍 Destination: {destination}")
-    
-    if not budget or not trip_duration or not destination:
-        return "⚠️ Error: Missing required inputs!"
-    
-    itinerary = ""
-    
-    for day in range(1, trip_duration + 1):
-        itinerary += f"📅 **Day {day}** 🎯 **Destination:** {destination} 💰 **Budget:** {budget} INR 🛫 **Starting From:** {start_location} 🎭 **Purpose:** {purpose} 🌟 **Preferences:** {preferences}\n"
-        itinerary += "🌅 Morning: Explore a local attraction.\n"
-        itinerary += "🍽️ Afternoon: Try a budget-friendly local restaurant.\n"
-        itinerary += "🌆 Evening: Enjoy a cultural experience or nightlife.\n"
-        itinerary += "🏨 Stay: Book a budget hotel.\n"
-        itinerary += "🚖 Transport: Use local transport options.\n"
-        itinerary += "📍 Suggested Activities: Visit famous landmarks and try local food.\n"
-        itinerary += "────────────────────────────\n"
-    
-    print("✅ Itinerary Generated Successfully!")
-    return itinerary
+    """Generate a structured travel itinerary using Hugging Face API."""
+    prompt = (
+        f"Create a structured {trip_duration}-day travel itinerary from {start_location} to {destination}."
+        f"\n\n### Trip Details:"
+        f"\n- **Budget:** {budget} INR (strict, no deviations)"
+        f"\n- **Purpose:** {purpose}"
+        f"\n- **Preferences:** {preferences}"
+        f"\n\n### Itinerary Requirements:"
+        f"\n- Day-wise schedule with morning, afternoon, and evening activities"
+        f"\n- Budget-friendly hotels"
+        f"\n- Transportation options"
+        f"\n- Local food recommendations"
+        f"\n- Available tour guides or passes"
+        f"\n- Ensure all expenses fit within the budget"
+    )
+
+    response = query_huggingface(prompt)
+
+    return response if response else "❌ Error: Unable to fetch a valid itinerary from Hugging Face API."
