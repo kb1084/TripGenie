@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 # Load API Key
 load_dotenv()
 API_KEY = os.getenv("HUGGINGFACE_API_KEY")
-MODEL_NAME = "google/gemma-2-2b-it"  # Updated model
+MODEL_NAME = "google/gemma-2-2b-it" 
 API_URL = f"https://api-inference.huggingface.co/models/{MODEL_NAME}"
 HEADERS = {"Authorization": f"Bearer {API_KEY}"}
 
-# Debugging: Check if API key is loaded
+# Debugging
 print(f"🔍 API Key Loaded: {API_KEY is not None}")
 
 def query_huggingface(prompt, max_retries=5):
@@ -45,7 +45,7 @@ def query_huggingface(prompt, max_retries=5):
             print(f"❌ Request error: {e}")
             return None
         
-        wait_time = min(2 ** attempt, 60)  # Exponential backoff with a max wait time of 60s
+        wait_time = min(2 ** attempt, 60)  # Exponential backoff 
         print(f"⚠️ Retrying in {wait_time} seconds...")
         time.sleep(wait_time)
 
