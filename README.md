@@ -1,6 +1,6 @@
-# TripGinie – Your AI Travel Genie! 🌍✨
+# TripGenie – Your AI Travel Genie! 🌍✨
 
-TripGinie is an AI-powered travel planner that generates personalized itineraries based on your budget, trip duration, destination, and preferences. Whether you're an adventure seeker, a cultural enthusiast, or just looking to relax, TripGini helps you craft the perfect journey effortlessly! 🚀
+TripGenie is an AI-powered travel planner that generates personalized itineraries based on your budget, trip duration, destination, and preferences. Whether you're an adventure seeker, a cultural enthusiast, or just looking to relax, TripGini helps you craft the perfect journey effortlessly! 🚀
 
 ## Features ✨
 - **Personalized Itineraries** 🗺️ – Get AI-generated travel plans tailored to your interests.
@@ -15,7 +15,7 @@ TripGinie is an AI-powered travel planner that generates personalized itinerarie
    ```
 2. Navigate to the project directory:
    ```sh
-   cd TripGinie
+   cd TripGenie
    ```
 3. Install dependencies:
    ```sh
