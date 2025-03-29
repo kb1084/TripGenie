@@ -4,7 +4,7 @@ from itinerary import generate_itinerary
 st.title("🌍 TripGinie– Your AI Travel Genie!")
 
 # Input Fields
-budget = st.text_input("Enter your budget ($)", "1000")
+budget = st.text_input("Enter your budget (₹)", "1000")
 trip_duration = st.number_input("Trip Duration (days)", min_value=1, max_value=30, value=5)
 destination = st.text_input("Enter your destination", "Paris")
 start_location = st.text_input("Enter your starting location", "New York")
@@ -15,7 +15,7 @@ preferences = st.text_area("Enter your preferences (e.g., food, sightseeing, adv
 if st.button("Generate Itinerary"):
     itinerary = generate_itinerary(budget, trip_duration, destination, start_location, purpose, preferences)
     
-    # Apply a border around the output
+    # Apply a border around the output with black text
     st.subheader("Generated Itinerary")
     st.markdown(
         f"""
@@ -24,6 +24,7 @@ if st.button("Generate Itinerary"):
             border-radius: 10px;
             padding: 15px;
             background-color: #f9f9f9;
+            color: black; /* Ensures text is black */
         ">
             {itinerary}
         </div>
